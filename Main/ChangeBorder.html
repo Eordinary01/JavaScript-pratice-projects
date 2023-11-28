@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change border</title>
+    <style>
+        body{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+      
+
+        div{
+            height: 200px;
+            width: 200px;
+            border: 2px solid palegreen;
+            transition: all 0.5s ease-in-out;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <input type="text" name="" id="">
+
+    <textarea ></textarea>
+    <button>Speak</button>
+
+
+
+    <script>
+        let box = document.querySelector("div"); 
+        input = document.querySelector("input");
+        button = document.querySelector("button");
+        text = document.querySelector("textarea");
+
+        input.addEventListener("input", ()=>{
+            box.style.borderRadius = input.value;
+            box.style.background = input.value;
+        });
+
+        
+        button.addEventListener("click", ()=>{
+            let utterance = new SpeechSynthesisUtterance(text.value);
+            speechSynthesis.speak(utterance);
+        });
+    </script>
+    
+</body>
+</html>

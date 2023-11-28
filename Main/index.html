@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Background Color Changer & Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="Pratice.js"></script>
+  </head>
+
+  <body>
+    <div class="container">Time is <span id="time"></span></div>
+    <select id="colorSelect" onchange="changeBackgroundColor()">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="yellow">Yellow</option>
+      <option value="blue">Blue</option>
+      <option value="pink">pink</option>
+      <option value="purple">purple</option>
+    </select>
+
+    <h1>Guess the Number</h1>
+    <p>
+      We have selected a random no between 1 to 100.See if you can guess that.
+    </p>
+
+    <div class="form">
+      <label for="guessField"> Enter a guess: </label>
+
+      <input type="text" id="guessField" class="guessField" />
+
+      <input
+        type="submit"
+        value="Submit guess"
+        class="guessSubmit"
+        id="submitguess"
+      />
+    </div>
+
+    <script>
+      
+
+     // Generate a Random Number
+        let y = Math.floor(Math.random() * 100 + 1);
+        console.log(y);
+ 
+        // Counting the number of guesses
+        // made for correct Guess
+        let guess = 1;
+ 
+        document.getElementById("submitguess").onclick = function () {
+ 
+            // Number guessed by user   
+            let x = document.getElementById("guessField").value;
+ 
+            if (x == y) {
+                alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+                    + guess + " GUESS ");
+            }
+ 
+            /* If guessed number is greater than actual number*/
+            else if (x > y) {
+                guess++;
+                alert("OOPS SORRY!! TRY A SMALLER NUMBER");
+            }
+            else {
+                guess++;
+                alert("OOPS SORRY!! TRY A GREATER NUMBER")
+            }
+        }
+ 
+ 
+ 
+ 
+ 
+    
+    </script>
+  </body>
+</html>

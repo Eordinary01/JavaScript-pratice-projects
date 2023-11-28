@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(18, 18, 18);
+}
+
+header {
+  background: white;
+  /* color: black; */
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  color: black;
+  font-family:  'Open Sans';
+}
+.score-board {
+    position: relative;
+    color: white;
+    text-align: center;
+  margin: 21px auto;
+  padding: 15px  20px;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 11vw;
+  font-size: 1.5rem;
+  font-family: 'Oswald', sans-serif;
+
+}
+.badge{
+    background: rgb(239, 86, 30);
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+}
+#user-label{
+    position: absolute;
+    top: 20px;
+    left: -20px;
+}
+#computer-label{
+    position: absolute;
+    top: 20px;
+    right: -20px;
+}
+
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result p{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: white;
+}
+.choices{
+    text-align: center;
+    margin: 25px 0;
+}
+.choice{
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin: 50px;
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
+}
+.choice:hover{
+    cursor: pointer;
+    background: rgb(33, 29, 29);
+    border-color: rgb(17, 15, 15);
+    font-size: 1rem;
+    
+}
+#r img {
+    height: 120px;
+}
+
+#action-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+
+}
+
