@@ -24,19 +24,23 @@ function conversion(letter){
 }
 
 function win(userChoice,computerChoice){
+    
     userScore++;
+    // computerScore--;
     // console.log("win");
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
 
     const userWord = "(user)".fontsize(3).sup();
     const compWord = "(comp)".fontsize(3).sub();
-
+    
     result.innerHTML = `${conversion(userChoice)}${userWord}  beats  ${conversion(computerChoice)}${compWord}  You Win!!  `
+
     
 }
 function lose(userChoice,computerChoice){
     computerScore++;
+    // userScore--;
     // console.log("win");
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
@@ -57,7 +61,7 @@ function Tie(userChoice,computerChoice){
     const userWord = "(user)".fontsize(3).sup();
     const compWord = "(comp)".fontsize(3).sub();
 
-    result.innerHTML = `${conversion(userChoice)}${userWord}  Match ${conversion(computerChoice)}${compWord}  Tied!!  `
+    result.innerHTML = `${conversion(userChoice)}${userWord}  !Match Tied! ${conversion(computerChoice)}${compWord}   `
 
 }
 
