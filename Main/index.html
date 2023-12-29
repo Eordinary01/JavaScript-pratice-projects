@@ -3,41 +3,59 @@
   <head>
     <title>Background Color Changer & Number Guessing Game</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="Pratice.js"></script>
+    <!-- <script src="Pratice.js"></script> -->
   </head>
 
   <body>
-    <div class="container">Time is <span id="time"></span></div>
-    <select id="colorSelect" onchange="changeBackgroundColor()">
+     <div class="container">Time is: <span id="time"></span></div>
+     
+    <!-- <select id="colorSelect" onchange="changeBackgroundColor()">
       <option value="red">Red</option>
       <option value="green">Green</option>
       <option value="yellow">Yellow</option>
       <option value="blue">Blue</option>
       <option value="pink">pink</option>
       <option value="purple">purple</option>
-    </select>
+    </select> -->
+    
 
-    <h1>Guess the Number</h1>
-    <p>
+
+<div class="main-body">
+
+  <h1><span>G</span>uess <span>T</span>he <span>N</span>umber</h1>
+</div>
+  <p>
       We have selected a random no between 1 to 100.See if you can guess that.
-    </p>
+   </p>
 
     <div class="form">
       <label for="guessField"> Enter a guess: </label>
 
       <input type="text" id="guessField" class="guessField" />
-
+      
       <input
         type="submit"
-        value="Submit guess"
+        value="Submit"
         class="guessSubmit"
         id="submitguess"
       />
     </div>
 
+    <div class="result" id="resultField"></div>
+
     <script>
+      function startnewGame(){
+        y = Math.floor(Math.random() * 100 + 1);
+        console.log(y);
+
+
+        guess = 1;
+
+        document.getElementById('resultField').innerText="";
+      }
       
 
+     
      // Generate a Random Number
         let y = Math.floor(Math.random() * 100 + 1);
         console.log(y);
@@ -52,20 +70,48 @@
             let x = document.getElementById("guessField").value;
  
             if (x == y) {
-                alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
-                    + guess + " GUESS ");
+              displayResult("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+
+              + guess + " GUESS ");
+                    
             }
+            // if(confirm("Do you want to play again! ")){
+            //           startnewGame();
+
+            //         }
  
             /* If guessed number is greater than actual number*/
             else if (x > y) {
                 guess++;
-                alert("OOPS SORRY!! TRY A SMALLER NUMBER");
+                displayResult("OOPS SORRY!! TRY A SMALLER NUMBER");
             }
             else {
                 guess++;
-                alert("OOPS SORRY!! TRY A GREATER NUMBER")
+                displayResult("OOPS SORRY!! TRY A GREATER NUMBER")
             }
-        }
+        
+        document.getElementById("guessField").value = "";
+      }
+
+      function displayResult(result){
+        document.getElementById('resultField').innerText=result;
+
+        setTimeout(()=>{
+          document.getElementById('resultField').innerText='';
+
+        },1500);
+      }
+
+
+
+
+      function displayTime() {
+  time = new Date();
+  // console.log(time)
+  document.getElementById('time').innerHTML = time
+
+};
+setInterval(displayTime, 1000);
  
  
  
